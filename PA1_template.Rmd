@@ -1,8 +1,7 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  html_document: default
 ---
 
 
@@ -144,8 +143,5 @@ qplot(x=as.numeric(interval),y=steps,data=merged,facets=weekday~.,geom="line",xl
 
 ```
 
-```{r,echo=TRUE}
-library(knitr)
-knit2html("PA1_template.Rmd")
-```
+
 
