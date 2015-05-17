@@ -1,8 +1,7 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  html_document: default
 ---
 
 
@@ -184,108 +183,4 @@ qplot(x=as.numeric(interval),y=steps,data=merged,facets=weekday~.,geom="line",xl
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
 
-```r
-library(knitr)
-knit2html("PA1_template.Rmd")
-```
-
-```
-## 
-## 
-## processing file: PA1_template.Rmd
-```
-
-```
-##   |                                                                         |                                                                 |   0%  |                                                                         |...                                                              |   5%
-##   ordinary text without R code
-## 
-##   |                                                                         |.......                                                          |  11%
-## label: unnamed-chunk-10 (with options) 
-## List of 1
-##  $ echo: logi TRUE
-## 
-##   |                                                                         |..........                                                       |  16%
-##   ordinary text without R code
-## 
-##   |                                                                         |..............                                                   |  21%
-## label: unnamed-chunk-11 (with options) 
-## List of 1
-##  $ echo: logi TRUE
-```
-
-```
-##   |                                                                         |.................                                                |  26%
-##   ordinary text without R code
-## 
-##   |                                                                         |.....................                                            |  32%
-## label: unnamed-chunk-12 (with options) 
-## List of 2
-##  $ echo   : logi TRUE
-##  $ results: chr "asis"
-## 
-##   |                                                                         |........................                                         |  37%
-##   ordinary text without R code
-## 
-##   |                                                                         |...........................                                      |  42%
-## label: unnamed-chunk-13 (with options) 
-## List of 1
-##  $ echo: logi TRUE
-```
-
-```
-##   |                                                                         |...............................                                  |  47%
-##   ordinary text without R code
-## 
-##   |                                                                         |..................................                               |  53%
-## label: unnamed-chunk-14 (with options) 
-## List of 2
-##  $ echo   : logi TRUE
-##  $ results: chr "asis"
-## 
-##   |                                                                         |......................................                           |  58%
-##   ordinary text without R code
-## 
-##   |                                                                         |.........................................                        |  63%
-## label: unnamed-chunk-15 (with options) 
-## List of 1
-##  $ echo: logi TRUE
-## 
-##   |                                                                         |............................................                     |  68%
-##   ordinary text without R code
-## 
-##   |                                                                         |................................................                 |  74%
-## label: unnamed-chunk-16 (with options) 
-## List of 2
-##  $ echo   : logi TRUE
-##  $ results: chr "asis"
-```
-
-```
-##   |                                                                         |...................................................              |  79%
-##   ordinary text without R code
-## 
-##   |                                                                         |.......................................................          |  84%
-## label: unnamed-chunk-17 (with options) 
-## List of 1
-##  $ echo: logi TRUE
-```
-
-```
-##   |                                                                         |..........................................................       |  89%
-##   ordinary text without R code
-## 
-##   |                                                                         |..............................................................   |  95%
-## label: unnamed-chunk-18 (with options) 
-## List of 1
-##  $ echo: logi TRUE
-```
-
-```
-##   |                                                                         |.................................................................| 100%
-##   ordinary text without R code
-```
-
-```
-## output file: PA1_template.md
-```
 
