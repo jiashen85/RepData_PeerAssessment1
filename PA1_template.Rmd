@@ -19,7 +19,7 @@ library(dplyr)
 ```{r, echo=TRUE}
 
 #according to the project requirement, we can ignore the missing values. therefore, na.action=na.omit is used to removed NAs. 
-new<-aggregate(steps~date,data=dat,sum,na.action=na.omit)
+new<-aggregate(steps~date,data=dat,match.fun(sum),na.action=na.omit)
 
 hist(new$steps,xlab="steps",ylab="days",main="Histogram of Total Number of Steps Per Day",breaks=10)
 ```
@@ -144,4 +144,8 @@ qplot(x=as.numeric(interval),y=steps,data=merged,facets=weekday~.,geom="line",xl
 
 ```
 
+```{r,echo=TRUE}
+library(knitr)
+knit2html("PA1_template.Rmd")
+```
 
