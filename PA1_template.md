@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -9,31 +14,18 @@ dat<-read.csv("./activity.csv")
 library(dplyr)
 ```
 
-```
-## 
-## Attaching package: 'dplyr'
-## 
-## The following object is masked from 'package:stats':
-## 
-##     filter
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
 
 ## What is mean total number of steps taken per day?
 
 
 ```r
 #according to the project requirement, we can ignore the missing values. therefore, na.action=na.omit is used to removed NAs. 
-new<-aggregate(steps~date,data=dat,sum,na.action=na.omit)
+new<-aggregate(steps~date,data=dat,match.fun(sum),na.action=na.omit)
 
 hist(new$steps,xlab="steps",ylab="days",main="Histogram of Total Number of Steps Per Day",breaks=10)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 
 ```r
@@ -87,7 +79,7 @@ abline(v=mx, col="red")
 text(x=104,y=0,labels="8:35")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 Therefore, the interval has the maximum number of steps are "835" meaning "8:35 am".This finding reflects that the user is most active at 8:35 am during a day.  
 
@@ -129,7 +121,7 @@ new5<-aggregate(steps~date,data=new4,match.fun(sum))
 hist(new5$steps,xlab="steps",ylab="days",main="Histogram of Total Number of Steps Per Day",breaks=10)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 ```r
 #to calculate the new mean and median after imputing.
@@ -189,6 +181,111 @@ merged$interval<-as.factor(merged$interval)
 qplot(x=as.numeric(interval),y=steps,data=merged,facets=weekday~.,geom="line",xlab="Interval",ylab="Number of steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
+
+```r
+library(knitr)
+knit2html("PA1_template.Rmd")
+```
+
+```
+## 
+## 
+## processing file: PA1_template.Rmd
+```
+
+```
+##   |                                                                         |                                                                 |   0%  |                                                                         |...                                                              |   5%
+##   ordinary text without R code
+## 
+##   |                                                                         |.......                                                          |  11%
+## label: unnamed-chunk-10 (with options) 
+## List of 1
+##  $ echo: logi TRUE
+## 
+##   |                                                                         |..........                                                       |  16%
+##   ordinary text without R code
+## 
+##   |                                                                         |..............                                                   |  21%
+## label: unnamed-chunk-11 (with options) 
+## List of 1
+##  $ echo: logi TRUE
+```
+
+```
+##   |                                                                         |.................                                                |  26%
+##   ordinary text without R code
+## 
+##   |                                                                         |.....................                                            |  32%
+## label: unnamed-chunk-12 (with options) 
+## List of 2
+##  $ echo   : logi TRUE
+##  $ results: chr "asis"
+## 
+##   |                                                                         |........................                                         |  37%
+##   ordinary text without R code
+## 
+##   |                                                                         |...........................                                      |  42%
+## label: unnamed-chunk-13 (with options) 
+## List of 1
+##  $ echo: logi TRUE
+```
+
+```
+##   |                                                                         |...............................                                  |  47%
+##   ordinary text without R code
+## 
+##   |                                                                         |..................................                               |  53%
+## label: unnamed-chunk-14 (with options) 
+## List of 2
+##  $ echo   : logi TRUE
+##  $ results: chr "asis"
+## 
+##   |                                                                         |......................................                           |  58%
+##   ordinary text without R code
+## 
+##   |                                                                         |.........................................                        |  63%
+## label: unnamed-chunk-15 (with options) 
+## List of 1
+##  $ echo: logi TRUE
+## 
+##   |                                                                         |............................................                     |  68%
+##   ordinary text without R code
+## 
+##   |                                                                         |................................................                 |  74%
+## label: unnamed-chunk-16 (with options) 
+## List of 2
+##  $ echo   : logi TRUE
+##  $ results: chr "asis"
+```
+
+```
+##   |                                                                         |...................................................              |  79%
+##   ordinary text without R code
+## 
+##   |                                                                         |.......................................................          |  84%
+## label: unnamed-chunk-17 (with options) 
+## List of 1
+##  $ echo: logi TRUE
+```
+
+```
+##   |                                                                         |..........................................................       |  89%
+##   ordinary text without R code
+## 
+##   |                                                                         |..............................................................   |  95%
+## label: unnamed-chunk-18 (with options) 
+## List of 1
+##  $ echo: logi TRUE
+```
+
+```
+##   |                                                                         |.................................................................| 100%
+##   ordinary text without R code
+```
+
+```
+## output file: PA1_template.md
+```
 
